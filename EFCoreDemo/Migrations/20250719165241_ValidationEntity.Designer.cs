@@ -4,6 +4,7 @@ using EFCoreDemo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCoreDemo.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20250719165241_ValidationEntity")]
+    partial class ValidationEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,41 +141,6 @@ namespace EFCoreDemo.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("EFCoreDemo.Models.Review", b =>
-                {
-                    b.Property<int>("ReviewKey")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("ReviewKey");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewKey"));
-
-                    b.Property<int?>("ArticleId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.HasKey("ReviewKey");
-
-                    b.HasIndex("ArticleId");
-
-                    b.HasIndex("AuthorId");
-
-                    b.ToTable("ReviewTable");
-                });
-
             modelBuilder.Entity("EFCoreDemo.Models.Article", b =>
                 {
                     b.HasOne("EFCoreDemo.Models.Author", "Author")
@@ -205,21 +173,6 @@ namespace EFCoreDemo.Migrations
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
-
-                    b.Navigation("Article");
-
-                    b.Navigation("Author");
-                });
-
-            modelBuilder.Entity("EFCoreDemo.Models.Review", b =>
-                {
-                    b.HasOne("EFCoreDemo.Models.Article", "Article")
-                        .WithMany()
-                        .HasForeignKey("ArticleId");
-
-                    b.HasOne("EFCoreDemo.Models.Author", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId");
 
                     b.Navigation("Article");
 

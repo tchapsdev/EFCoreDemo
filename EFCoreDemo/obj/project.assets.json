@@ -4717,11 +4717,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TchapsSolution\\source\\repos\\EFCoreDemo\\EFCoreDemo\\EFCoreDemo.csproj",
+      "projectUniqueName": "D:\\ws\\TchapsTech\\EFCoreDemo\\EFCoreDemo\\EFCoreDemo.csproj",
       "projectName": "EFCoreDemo",
-      "projectPath": "C:\\Users\\TchapsSolution\\source\\repos\\EFCoreDemo\\EFCoreDemo\\EFCoreDemo.csproj",
+      "projectPath": "D:\\ws\\TchapsTech\\EFCoreDemo\\EFCoreDemo\\EFCoreDemo.csproj",
       "packagesPath": "C:\\Users\\TchapsSolution\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TchapsSolution\\source\\repos\\EFCoreDemo\\EFCoreDemo\\obj\\",
+      "outputPath": "D:\\ws\\TchapsTech\\EFCoreDemo\\EFCoreDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

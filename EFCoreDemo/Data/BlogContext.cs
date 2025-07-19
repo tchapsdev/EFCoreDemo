@@ -13,6 +13,7 @@ namespace EFCoreDemo.Data
         public DbSet<Models.Category> Categories { get; set; } = null!;
         public DbSet<Models.Comment> Comments { get; set; } = null!;
         public DbSet<Models.Author> Authors { get; set; } = null!;
+        public DbSet<Models.Review> Reviews { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=TCHAPS-PF409VV8;Database=ArticleEFDemo;Trusted_Connection=True;TrustServerCertificate=True");

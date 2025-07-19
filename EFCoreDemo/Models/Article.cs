@@ -1,11 +1,17 @@
-﻿namespace EFCoreDemo.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EFCoreDemo.Models
 {
     public class Article
     {
         public int Id { get; set; }
 
+        [MaxLength(100)]
+        [Required]
         public string Title { get; set; } = string.Empty;
 
+        [MaxLength(1500)]
+        [Required]
         public string Content { get; set; } = string.Empty;
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
